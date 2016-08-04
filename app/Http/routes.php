@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -17,13 +19,14 @@ Route::get('/',
 
 function () {
 
-		//NOTIFICATION//
-		//$pusher = new Pusher('fde4c913418bef9c7a8b', 'f372de6e86369b9aae85', 231061);
+		$users = User::all();
 
-		return view('welcome');
+		return view('welcome', compact('users'));
 	});
 
 Route::get('push', 'PushController@test');
+
+Route::get('push/{id}', 'PushController@sendPush');
 
 Route::auth();
 

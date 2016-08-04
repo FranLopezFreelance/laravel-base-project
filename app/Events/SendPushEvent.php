@@ -6,19 +6,19 @@ use App\Events\Event;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
 
-class TestEvent extends Event implements ShouldBroadcast {
+class SendPushEvent extends Event implements ShouldBroadcast {
 
 	use SerializesModels;
 
-	public $message;
+	public $msg;
 
 	/**
 	 * Create a new event instance.
 	 *
 	 * @return void
 	 */
-	public function __construct($message) {
-		$this->message = $message;
+	public function __construct($msg) {
+		$this->msg = $msg;
 	}
 
 	/**
@@ -27,7 +27,6 @@ class TestEvent extends Event implements ShouldBroadcast {
 	 * @return array
 	 */
 	public function broadcastOn() {
-		return ['event'];
+		return [$this->msg['user_id']];
 	}
-
 }
