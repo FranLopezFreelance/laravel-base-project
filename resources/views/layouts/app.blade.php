@@ -48,13 +48,14 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/push') }}">Push</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/login') }}">Logins</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
@@ -80,16 +81,8 @@
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
     <!-- PUSHER -->
+    <script src="/js/pusher/pusher.js"></script>
+    <script src="/js/script-pusher.js"></script>
 
-    <script src="//js.pusher.com/3.0/pusher.min.js"></script>
-    <script>
-        var pusher = new Pusher("{{ env("PUSHER_KEY") }}");
-        var channel = pusher.subscribe('test-chanel');
-
-        channel.bind('test-event', function(data){
-            alert(data.text);
-        });
-
-    </script>
 </body>
 </html>

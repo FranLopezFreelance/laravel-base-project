@@ -4,20 +4,22 @@ namespace App\Events;
 
 use App\Events\Event;
 
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Queue\SerializesModels;
 
-class TestEvent extends Event {
+class TestEvent extends Event implements ShouldBroadcast {
+
 	use SerializesModels;
 
-	public $text;
+	public $message;
 
 	/**
 	 * Create a new event instance.
 	 *
 	 * @return void
 	 */
-	public function __construct($text) {
-		$this->text = $text;
+	public function __construct($message) {
+		$this->message = $message;
 	}
 
 	/**
@@ -26,12 +28,7 @@ class TestEvent extends Event {
 	 * @return array
 	 */
 	public function broadcastOn() {
-		return ['test-channel'];
+		return ['event'];
 	}
 
-    get('/broadcast', function(){
-        event(new TestEvent('Broadcasting in Laravel using Pusher!'));
-
-        return view('welcome');
-    });
 }

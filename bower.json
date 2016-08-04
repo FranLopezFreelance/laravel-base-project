@@ -1,0 +1,23 @@
+{
+  "name": "base-project",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Fran <franlopez.freelance@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/FranLopezFreelance/laravel-base-project",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "install": {
+    "path": "public/js"
+  },
+  "devDependencies": {
+    "pusher-websocket-iso": "pusher#^3.2.1"
+  }
+}
