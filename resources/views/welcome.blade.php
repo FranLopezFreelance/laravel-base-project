@@ -25,7 +25,6 @@
 
 <script>
     function sendPush( id ) {
-        //console.log(id);
         $.get( "/push/" + id );
     }
 </script>
