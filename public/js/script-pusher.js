@@ -1,6 +1,6 @@
 $(function(){
 
-	console.log('Javascript funcionando!');
+	//console.log('Javascript funcionando!');
 	
 		var pusher = new Pusher('fde4c913418bef9c7a8b');
 
