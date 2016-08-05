@@ -15,9 +15,10 @@ class PushController extends Controller {
 	}
 
 	public function sendPush($id) {
+
 		event(new SendPushEvent(
 				[
-					'text'    => 'Te han hecho un Push...  =)',
+					'text'    => "Te han dado un Toque!",
 					'user_id' => $id,
 				]));
 	}

@@ -57,7 +57,7 @@
                         <li><a href="{{ url('/login') }}">Logins</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                        <span id="idUserLogedIn">{{ Auth::user()->id }}</span>
+                        <span id="idUserLogedIn" style="visibility:hidden">{{ Auth::user()->id }}</span>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>

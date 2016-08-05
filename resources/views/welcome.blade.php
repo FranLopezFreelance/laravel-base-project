@@ -12,7 +12,6 @@
                             <h4>Push to User...</h4>
                             @foreach($users as $user)
                                 @if(!Auth::guest() AND $user->id != Auth::user()->id)
-
                                     <li><a onclick="sendPush({{ $user->id }})">{{ $user->name }}</a></li>
                                 @endif
                             @endforeach
@@ -24,7 +23,7 @@
 </div>
 
 <script>
-    function sendPush( id ) {
+    function sendPush( id) {
         $.get( "/push/" + id );
     }
 </script>
